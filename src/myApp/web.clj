@@ -2,6 +2,7 @@
   (:require [immutant.web :as web]
             [immutant.web.middleware :as immutant]
             [myApp.post :as post]
+;;            [myApp.db :as db]
             [cheshire.core :as json]
             [compojure.route :as route]
             [compojure.core :refer (ANY GET POST defroutes)]
@@ -40,9 +41,10 @@
   (ANY "*" [] echo))
 
 (defn -main [& {:as args}]
-  (web/run
+;; (db/init-db "mytestdb")  
+ (web/run
     (-> routes
       (immutant/wrap-session {:timeout 20}))
-;;  (db/init-db "name of your mongoDB")
+   
     (merge {"host" (env :myApp-web-host), "port" (env :myApp-web-port)}
       args)))
