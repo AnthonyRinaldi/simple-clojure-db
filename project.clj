@@ -9,7 +9,8 @@
                  [org.clojure/core.memoize "0.5.6"]
                  [clj-time "0.9.0"]
                  [cheshire "5.4.0"]
-                 [environ "1.0.0"]]
+                 [environ "1.0.0"]
+                 [com.novemberain/monger "1.5.0"]]
   :repositories [["Immutant incremental builds"
                   "http://downloads.immutant.org/incremental/"]]
   :plugins [[lein-immutant "2.0.0-beta1"]]
