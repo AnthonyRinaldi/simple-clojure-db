@@ -1,11 +1,6 @@
-(ns myapp.post
-  (:require [monger.collection :as mc]
-            [monger.core :as mg])
+(ns myApp.post
+  (:require [monger.collection :as mc])
   (:import [org.bson.types ObjectId]))
-
-(defn init-db [name]
-  (mg/connect!)
-  (mg/set-db! (mg/get-db name)))
 
 (defn fetch [id]
   (mc/find-one-as-map "posts" { :_id id }))
